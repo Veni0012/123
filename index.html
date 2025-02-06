@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffcccb;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        h1 {
+            color: #d5006d;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        .no {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+        img {
+            width: 300px; /* Adjust the size as needed */
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine?</h1>
+    <button class="yes" onclick="window.location.href='response.html'">Yes</button>
+    <button class="no" onclick="moveButton(this)">No</button>
+    <img id="valentineImage" src="https://media.tenor.com/K_E6ORTmXMoAAAAM/milk-and-mocha-love.gif" alt="Cute Valentine Image">
+
+    <script>
+        function moveButton(button) {
+            const screenWidth = window.innerWidth - button.offsetWidth;
+            const screenHeight = window.innerHeight - button.offsetHeight;
+
+            const x = Math.random() * screenWidth;
+            const y = Math.random() * screenHeight;
+            button.style.position = 'absolute';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+
+            // Change the image when "No" is clicked
+            const image = document.getElementById('valentineImage');
+            image.src = "https://i.pinimg.com/originals/43/ff/e1/43ffe16a0deb6681d0e4074dfda2dc0b.gif"; // Change this to your desired image URL
+        }
+    </script>
+
+</body>
+</html>
